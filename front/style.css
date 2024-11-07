@@ -1,0 +1,64 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#logo{
+    width: 90px;
+    margin-top: -10px;
+    justify-content: center;
+}
+
+.icons{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-image: linear-gradient(#CA9EE6, #7F96FF); 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+  }
+  
+  .sidenav a {
+    display: flex;
+    align-items: center; 
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    transition: 0.3s;
+    margin-top: 20px;
+  }
+  
+  .sidenav a:hover {
+    color: #878787;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    font-size: 50px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
