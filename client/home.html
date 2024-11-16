@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+
+    function openModal() {
+        document.getElementById('createPostModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('createPostModal').style.display = 'none';
+    }
+
+    function createPost() {
+        const postContent = document.getElementById('postContent').value;
+        if (postContent.trim() === '') {
+            alert('A postagem não pode estar vazia!');
+            return;
+        }
+
+        const postList = document.getElementById('postList');  
+        const newPost = document.createElement('div');
+        newPost.className = 'post';
+        newPost.textContent = postContent;
+        postList.appendChild(newPost);
+
+        document.getElementById('postContent').value = '';
+        closeModal();
+    }
+  </script>
+  <title>Vibes</title>
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" onclick="openModal()"> 
+      <img src="../assets/ToCreateIcon.png" alt="Ícone de criar" class="icons"> Criar
+    </a>
+    <a href="messages.html"> <img src="../assets/MessagesIcon.png" alt="Ícone de mensagens" class="icons"> Mensagens</a>
+  </div>
+
+  <span onclick="openNav()"><img src="../assets/Logo.png" alt="Logo do Vibes" id="logo"></span>
+
+  <a href="javascript:void(0)" onclick="openModal()"> 
+    <img src="../assets/ToCreateIcon.png" alt="Ícone de criar" id="criar" > 
+  </a>
+
+  <div id="createPostModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Criar Postagem</h2>
+        <textarea id="postContent" placeholder="Escreva sua postagem aqui..."></textarea>
+        <button onclick="createPost()">Publicar</button>
+    </div>
+  </div>
+
+  <div id="postList">
+  </div>
+</body>
+</html>

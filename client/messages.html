@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+      document.getElementById("sendButton").addEventListener("click", function() {
+        var message = document.getElementById("messageInput").value;
+    
+        fetch('http://localhost:4000/send-message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                var chat = document.getElementById("chat");
+                chat.innerHTML += "<p>" + message + "</p>";
+                document.getElementById("messageInput").value = ''; 
+            } else {
+                alert('Erro ao enviar mensagem');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+    });
+    
+  </script>
+  <title>Chat</title>
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="home.html"> <img src="../assets/HomeIcon.png" alt="Ícone da página inicial" class="icons" > Home</a>
+    <a href="#"> <img src="../assets/MessagesIcon.png" alt="Ícone de mensagens" class="icons"> Mensagens</a>
+  </div>
+  
+  <span onclick="openNav()"><img src="../assets/Logo.png" alt="Logo do Vibes" id="logo" ></span>
+  
+  <h2>Vibes</h2>
+  <div id="chat" style="height: 300px; overflow-y: auto;"></div>
+  <div id="inputArea">
+    <input type="text" id="messageInput" placeholder="Digite sua mensagem">
+    <button id="sendButton">Enviar</button>
+  </div>
+  <div id="userList">Usuários conectados: </div>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#chat {
+    width: 80%;
+    max-width: 600px;
+    height: 70%;
+    border: 3px solid #CA9EE6; 
+    background-color: #1e1e1e; 
+    color: white; 
+    overflow-y: auto;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    margin-top: -150px;
+}
+
+.message {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #333; 
+    color: white; 
+}
+
+#inputArea {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    margin-top: 10px;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #CA9EE6;
+    border-radius: 10px;
+    outline: none;
+    background-color: #2d2d2d; 
+    color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#sendButton {
+    background-color: #CA9EE6;
+    color: black;
+    font-weight: 700;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sendButton:hover {
+    background-color: #5a7eff; 
+}
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#logo{
+    width: 200px;
+    margin-top: -5px;
+    margin-left: -32%;
+    justify-content: center;
+}
+
+.icons{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-image: linear-gradient(#CA9EE6, #7F96FF); 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+  }
+  
+  .sidenav a {
+    display: flex;
+    align-items: center; 
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    transition: 0.3s;
+    margin-top: 20px;
+  }
+  
+  .sidenav a:hover {
+    color: #878787;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    font-size: 50px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-content textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.post {
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px;
+    border: 10px solid #CA9EE6; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 200px; 
+    text-align: center; 
+    position: relative;
+    overflow: hidden; 
+    word-wrap: break-word; 
+    white-space: normal;
+    min-height: 70px; }
+
+
+.post::after {
+    content: ''; 
+    position: absolute;
+    bottom: -1px;
+    left:-1px;
+    right: -1px;
+    height: 60px;
+    background-color: #CA9EE6;
+}
+
+
+  
+  .post p {
+    font-size: 14px;
+    color: #555;
+    padding-top: 10px;
+    margin-bottom: 70px;
+  }
+
+ 
+button {
+    background-color: #4578a0; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  button:hover {
+    background-color: #4578a0; 
+  }
+  
+
+  #criar {
+    position: fixed; /* Mantém o botão fixo na tela */
+    bottom: 20px; /* Distância da borda inferior */
+    right: 20px; /* Distância da borda direita */
+    background-color: #CA9EE6; /* Cor de fundo */
+    color: black; /* Cor do texto */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none; /* Remove bordas padrão */
+    border-radius: 10px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+#criar:hover {
+    background-color: #7F96FF; 
+}
+
+
+#postContent{
+    width: 400px;
+}
